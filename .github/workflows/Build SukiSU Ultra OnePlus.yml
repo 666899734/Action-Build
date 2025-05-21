@@ -40,6 +40,7 @@ on:
           - oneplus_ace5
           - oneplus_pad2_v
           - oneplus_13
+          - JiuGeFaCai_oneplus_13_v
           - oneplus_ace5_pro
           - oneplus_13t
           - GitHub有bug可能不显示最后一项,误使用此项
