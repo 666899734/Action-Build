@@ -75,13 +75,6 @@ on:
          - "5.15"
          - "6.1"
          - "6.6"
-      KERNEL_NAME:
-        description: "修改内核名称"
-        required: true
-        default: '-android15-8-sun-sun'
-        options:
-        - -android15-8-sun-sun
-        - -android15-8-sun-sun
       BUILD_METHOD:
         type: choice
         description: "编译方式"
