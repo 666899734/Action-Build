@@ -75,6 +75,10 @@ on:
          - "5.15"
          - "6.1"
          - "6.6"
+      KERNEL_NAME:
+        description: "修改内核名称"
+        required: true
+        default: '-android15-8-sun-sun'
       BUILD_METHOD:
         type: choice
         description: "编译方式"
@@ -279,6 +283,11 @@ jobs:
 
           # Remove check_defconfig
           sed -i 's/check_defconfig//' ./common/build.config.gki
+          
+          - name: Add make name
+          run: |
+          cd kernel_workspace/kernel_platform
+          sed -i 's/res="\$res\$(cat "\$file")"/res="${{ github.event.inputs.KERNEL_NAME }}"/g' ./common/scripts/setlocalversion
 
           # LZ4KD配置
           if [ "${{ github.event.inputs.ZRAM }}" = "true" ]; then
